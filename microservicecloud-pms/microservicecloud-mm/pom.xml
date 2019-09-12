@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>microservicecloud-pms</artifactId>
+        <groupId>com.wk.microservicecloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>microservicecloud-mm</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>microservicecloud-mm-api</module>
+        <module>microservicecloud-mm-consumer-8005</module>
+        <module>microservicecloud-mm-provider-8001</module>
+        <module>microservicecloud-mm-eureka-7001</module>
+        <module>microservicecloud-mm-eureka-7002</module>
+        <module>microservicecloud-mm-eureka-7003</module>
+        <module>microservicecloud-mm-provider-8002</module>
+        <module>microservicecloud-mm-provider-8003</module>
+        <module>microservicecloud-mm-consumer-feign-8006</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.wk.microservicecloud</groupId>
+            <artifactId>microservicecloud-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

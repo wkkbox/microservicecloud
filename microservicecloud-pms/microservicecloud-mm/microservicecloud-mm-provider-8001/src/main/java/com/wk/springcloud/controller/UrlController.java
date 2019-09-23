@@ -1,5 +1,6 @@
 package com.wk.springcloud.controller;
 
+import com.wk.springcloud.common.MessageResult;
 import com.wk.springcloud.model.Url;
 import com.wk.springcloud.service.UrlService;
 import org.slf4j.Logger;
@@ -25,21 +26,18 @@ public class UrlController {
     private DiscoveryClient discoveryClient;
 
     @RequestMapping(value = "/cloud/getUrls", produces = "application/json")
-    public List<Url> getUrls() {
+    public MessageResult getUrls() {
         System.out.println("mm-provider-8001");
-        List<Url> urls = null;
-        try {
-            //System.out.println(1 / 0);
-            urls = urlService.selectAll();
-        } catch (Exception e) {
-            logger.error("调用/cloud/getUrls失败", e);
-            e.printStackTrace();
-        }
-        return urls;
+        MessageResult messageResult = null;
+        List<Url> urls  = urlService.selectAll();
+        messageResult = new MessageResult(true, "查询成功", urls);
+        return messageResult;
     }
 
     @RequestMapping(value = "/cloud/discovery", produces = "application/json")
-    public Object discovery() {
+    public MessageResult discovery() {
+        System.out.println("mm-provider-8001");
+        MessageResult messageResult = null;
         List<String> list = discoveryClient.getServices();
         System.out.println("**********" + list);
         List<ServiceInstance> srvList = discoveryClient.getInstances("MICROSERVICECLOUD-MM");
@@ -47,7 +45,8 @@ public class UrlController {
             System.out.println(element.getServiceId() + "\t" + element.getHost() + "\t" + element.getPort() + "\t"
                     + element.getUri());
         }
-        return this.discoveryClient;
+        messageResult = new MessageResult(true, "查询成功", discoveryClient);
+        return messageResult;
     }
 
 }

@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface UrlService {
 
-    List<Url> selectAll() throws Exception;
+    List<Url> selectAll();
 
 }

@@ -21,6 +21,13 @@
         <module>microservicecloud-mm-provider-8002</module>
         <module>microservicecloud-mm-provider-8003</module>
         <module>microservicecloud-mm-consumer-feign-8006</module>
+        <module>microservicecloud-mm-provider-hystrix-8004</module>
+        <module>microservicecloud-mm-consumer-hystrix-dashboard-8007</module>
+        <module>microservicecloud-mm-provider-hystrix-8008</module>
+        <module>microservicecloud-mm-consumer-hystrix-turbine-dashboard-8009</module>
+        <module>microservicecloud-mm-zuul-gateway-8010</module>
+        <module>microservicecloud-mm-config-server-8011</module>
+        <module>microservicecloud-mm-config-client-8012</module>
     </modules>
 
     <dependencies>

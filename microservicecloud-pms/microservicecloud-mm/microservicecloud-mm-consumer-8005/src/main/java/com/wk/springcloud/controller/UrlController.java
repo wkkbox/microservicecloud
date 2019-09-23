@@ -1,5 +1,6 @@
 package com.wk.springcloud.controller;
 
+import com.wk.springcloud.common.MessageResult;
 import com.wk.springcloud.model.Url;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,14 +24,14 @@ public class UrlController {
     private RestTemplate restTemplate;
 
     @RequestMapping(value = "/cloud/getUrls", produces = "application/json")
-    public List<Url> getUrls() {
-        List<Url> urlList = restTemplate.getForObject(REST_URL_PREFIX + "/mm/cloud/getUrls", List.class);
-        return urlList;
+    public MessageResult getUrls() {
+        MessageResult messageResult = restTemplate.getForObject(REST_URL_PREFIX + "/mm/cloud/getUrls", MessageResult.class);
+        return messageResult;
     }
 
     @RequestMapping(value = "/cloud/discovery", produces = "application/json")
-    public Object discovery() {
-        return restTemplate.getForObject(REST_URL_PREFIX + "/mm/cloud/discovery", Object.class);
+    public MessageResult discovery() {
+        return restTemplate.getForObject(REST_URL_PREFIX + "/mm/cloud/discovery", MessageResult.class);
     }
 
 }

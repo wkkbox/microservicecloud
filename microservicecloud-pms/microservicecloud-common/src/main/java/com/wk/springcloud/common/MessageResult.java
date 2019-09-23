@@ -1,12 +1,18 @@
 package com.wk.springcloud.common;
 
+import java.io.Serializable;
+
 /**
  * 处理消息结果的DTO
  */
-public class MessageResult {
+public class MessageResult implements Serializable {
     private boolean success;
     private String msg;
     private Object data;
+
+    public MessageResult() {
+
+    }
 
     public MessageResult(boolean success, String msg, Object data) {
         this.success = success;

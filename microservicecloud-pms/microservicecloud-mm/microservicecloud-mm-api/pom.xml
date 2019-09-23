@@ -11,5 +11,12 @@
 
     <artifactId>microservicecloud-mm-api</artifactId>
 
+    <dependencies>
+        <!-- feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

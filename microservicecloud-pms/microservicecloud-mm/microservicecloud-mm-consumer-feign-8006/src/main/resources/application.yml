@@ -1,8 +1,29 @@
 server:
   port: 8006
 
+feign:
+  hystrix:           # UrlFeignServiceFallbackFactory--------feign和hystrix整合
+   enabled: true
+
+ribbon:
+  ReadTimeout: 70000
+  ConnectTimeout: 60000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 50000
+#这里因为还有一个 feign 也有一个超时时间的设置，当然feign底层是 ribbon的封装，所以 直接配置ribbon，ribbon默认超时也是1秒。
+#所以这里都是强制要求，ribbon的超时时间要大于hystrix的超时时间，否则 hystrix自定义的超时时间毫无意义。
+#所以还得加个 ribbon超时时间设置
+#feign和hystrix整合超时时间就在消费者端配置了
+
 eureka:
   client:
+    #false表示不向注册中心注册自己，所以application-name也没配。
     register-with-eureka: false
     service-url:
       #defaultZone: http://localhost:7001/eureka/

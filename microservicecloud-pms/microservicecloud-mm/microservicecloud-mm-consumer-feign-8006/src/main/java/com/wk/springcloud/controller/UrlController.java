@@ -1,5 +1,6 @@
 package com.wk.springcloud.controller;
 
+import com.wk.springcloud.common.MessageResult;
 import com.wk.springcloud.feign.service.UrlFeignService;
 import com.wk.springcloud.model.Url;
 import org.slf4j.Logger;
@@ -21,13 +22,13 @@ public class UrlController {
     private UrlFeignService urlFeignService;
 
     @RequestMapping(value = "/cloud/getUrls", produces = "application/json")
-    public List<Url> getUrls() {
-        List<Url> urlList = urlFeignService.getUrls();
-        return urlList;
+    public MessageResult getUrls() {
+        MessageResult messageResult = urlFeignService.getUrls();
+        return messageResult;
     }
 
     @RequestMapping(value = "/cloud/discovery", produces = "application/json")
-    public Object discovery() {
+    public MessageResult discovery() {
         return urlFeignService.discovery();
     }
 

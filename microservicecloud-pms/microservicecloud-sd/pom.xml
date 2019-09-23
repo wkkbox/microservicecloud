@@ -15,6 +15,9 @@
         <module>microservicecloud-sd-api</module>
         <module>microservicecloud-sd-consumer-9005</module>
         <module>microservicecloud-sd-provider-9001</module>
+        <module>microservicecloud-sd-eureka-6001</module>
+        <module>microservicecloud-sd-eureka-6002</module>
+        <module>microservicecloud-sd-eureka-6003</module>
     </modules>
 
     <dependencies>

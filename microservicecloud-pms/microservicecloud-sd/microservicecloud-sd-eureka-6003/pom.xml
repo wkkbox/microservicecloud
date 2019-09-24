@@ -11,5 +11,17 @@
 
     <artifactId>microservicecloud-sd-eureka-6003</artifactId>
 
+    <dependencies>
+        <!-- eureka 服务端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+        </dependency>
+        <!-- config客户端从服务端到github拉取配置 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

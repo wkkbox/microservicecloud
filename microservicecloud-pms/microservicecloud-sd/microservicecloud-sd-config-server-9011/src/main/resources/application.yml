@@ -1,0 +1,15 @@
+server:
+  port: 9011
+
+spring:
+    application:
+        name: MICROSERVICECLOUD-SD-CONFIG-SERVER
+    cloud:
+      config:
+        server:
+          git:
+            #GitHub上面的git仓库名字
+            #uri: git@github.com:wkkbox/microservicecloud-pms-config.git
+            uri: https://github.com/wkkbox/microservicecloud-pms-config.git
+            search-paths:
+            - sd

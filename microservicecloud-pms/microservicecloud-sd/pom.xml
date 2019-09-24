@@ -18,6 +18,10 @@
         <module>microservicecloud-sd-eureka-6001</module>
         <module>microservicecloud-sd-eureka-6002</module>
         <module>microservicecloud-sd-eureka-6003</module>
+        <module>microservicecloud-sd-config-server-9011</module>
+        <module>microservicecloud-sd-consumer-hystrix-dashboard-9007</module>
+        <module>microservicecloud-sd-provider-9002</module>
+        <module>microservicecloud-sd-provider-9003</module>
     </modules>
 
     <dependencies>

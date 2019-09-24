@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      #需要从github上读取的资源名称，注意没有yml后缀名
+      name: sd-provider-9002
+      #本次访问的配置项  dev  test
+      profile: test
+      label: master
+      #配置的 config server 的地址，本微服务启动后先去找9011号服务，通过SpringCloudConfig获取GitHub上的配置
+      uri: http://localhost:9011
+ 
+
